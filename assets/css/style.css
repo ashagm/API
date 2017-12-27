@@ -1,0 +1,56 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'EB Garamond', serif;
+	background-color: #20a7db;
+	margin: 0 auto;
+	max-height: 100%;
+	/*border: 2px solid #000;*/
+}
+
+#header{
+	font-weight: bold;
+	font-size: 48px;
+}
+
+#location{
+	padding: 10px;
+	/*border: 1px solid #000;*/
+
+}
+
+#zipcode{
+	font-family: 'EB Garamond', serif;
+	width : 200px;
+	font-size : 24px;
+}
+
+#btn-search{
+	font-family: 'EB Garamond', serif;
+	
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#content-results{
+	background-color: grey;
+	/*border: 1px solid #000;*/
+}
+
+.div-result{
+	padding: 5px;
+	color : #000;
+	background-color: #fff;
+	margin: 10px;
+	border: 2px solid #000;
+}
+
+.input-block{
+	display : input-block;
+}
