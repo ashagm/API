@@ -36,14 +36,15 @@ function displayResults(yelpResponse){
 	$.each(yelpResponse, function(key, value){
 		console.log(yelpResponse.businesses);
 
-		for(let i = 0; i < 10; i++){
+		for(let i = 0; i < numOfResults; i++){
 			let newDiv = $("<div>");
 			newDiv.addClass("div-result");
 
 			let newLoc =
-			"<h3>" + yelpResponse.businesses[i].name + "</h3>" +
+			"<h3><a href='" + yelpResponse.businesses[i].url + "'>" + yelpResponse.businesses[i].name + "</h3>" +
 			"<p>" + yelpResponse.businesses[i].display_phone + "</p>" +
-			"<p><a href='" + yelpResponse.businesses[i].url +"''>link</a>";
+			"<p class='lat-long'><a href='#'  data-latitude=" + yelpResponse.businesses[i].coordinates.latitude +
+			" data-longitude=" + yelpResponse.businesses[i].coordinates.longitude + ">Show location om map</a></p>" ;			
 
 			newDiv.html(newLoc);
 
@@ -52,6 +53,12 @@ function displayResults(yelpResponse){
 	});
 
 }
+
+$('#content-results').on('click', '.div-result', function(event){
+	latitude = parseFloat($(this).find(".lat-long").find('a').attr('data-latitude'));
+	longitude = parseFloat($(this).find(".lat-long").find('a').attr('data-longitude'));
+	initMap();
+});
 
 
 });
